@@ -1,5 +1,5 @@
-import { ConteinerApp } from './StyledApp'
-import { ContentBody, Sidebar } from './components'
+import { ConteinerApp } from './app.styled'
+import { ContentBody, Sidebar } from '../pages/Principal Page'
 
 function App() {
   return (

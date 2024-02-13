@@ -5,23 +5,26 @@ const GlobalStyled = createGlobalStyle`
  :root {
   --color-PrimaryPurple: #AD1FEA;
 --color-SecondaryBlue: #4661E6;
+--color-LightSkyBlue: #62BCFA;  
+--color--Purple:#C75AF6;
 --color-White: #FFFFFF; 
---color-DarkBlue: #373F68; 
 --color-LightGreyBlue: #F2F4FF; 
+--color--LightGrey: #F2F4FE;
 --color-VeryLightGrey: #F7F8FD; 
 --color-MidnightBlue: #3A4374; 
+--color-DarkBlue: #373F68; 
 --color-SoftBlueGrey: #647196; 
 --color-Coral: #F49F85;  
---color-LightSkyBlue: #62BCFA;  
  }
 * { 
   margin:0;
   padding:0;
   box-sizing: border-box;
-  background: var(--color-VeryLightGrey);
+  
 }
 body {
   font-family: 'Jost', sans-serif;
+  background: var(--color-VeryLightGrey);
 }
 `
 export default GlobalStyled

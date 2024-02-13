@@ -1,24 +1,23 @@
 import styled from 'styled-components'
 
 export const ConteinerApp = styled.main`
+
   background: var(--color-VeryLightGrey);
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   gap: 30px;
   margin-top: 94px;
 
-  @media (width<768px) {
-    display: flex;
+  @media (width<1120px) {
     flex-direction: column;
-    justify-content: center;
     gap: 0px;
     margin-top: 56px;
     align-items: center;
     height: auto;
   }
-  @media (width<375px) {
+  @media (width<690px) {
+    align-content: flex-start;
+    align-items: flex-start;
     margin-top: 0px;
   }
 `
