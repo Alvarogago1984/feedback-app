@@ -9,11 +9,12 @@ const GlobalStyled = createGlobalStyle`
 --color--Purple:#C75AF6;
 --color-White: #FFFFFF; 
 --color-LightGreyBlue: #F2F4FF; 
---color--LightGrey: #F2F4FE;
+--color-LightGrey: #F2F4FE;
 --color-VeryLightGrey: #F7F8FD; 
 --color-MidnightBlue: #3A4374; 
 --color-DarkBlue: #373F68; 
 --color-SoftBlueGrey: #647196; 
+--color-GrayishBlue:#656EA3;
 --color-Coral: #F49F85;  
  }
 * { 

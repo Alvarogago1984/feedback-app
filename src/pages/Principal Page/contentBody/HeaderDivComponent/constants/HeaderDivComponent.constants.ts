@@ -1,3 +1,4 @@
-export const suggestions = 'Suggestions'
-export const orderList = 'Sort by : '
-export const mostUpvotes = 'Most Upvotes'
+export const SUGGESTIONS = 'Suggestions'
+export const ORDER_LIST = 'Sort by : '
+
+

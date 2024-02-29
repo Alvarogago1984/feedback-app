@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const ButtonHeader = styled.button`
-  background-color: var(--color-DarkBlue);
   border-radius: 10px;
   width: 158px;
   height: 44px;
@@ -13,10 +12,13 @@ export const ButtonHeader = styled.button`
   cursor: pointer;
   margin-right: 16px;
   flex: 0 0 auto;
+  &:hover {
+    background-color: var(--color--Purple);
+  }
 `
 export const ButtonTextHeader = styled.h3`
-  background-color: var( --color-PrimaryPurple);
-  color: var(--color-White);
+
+  color: var(--color-LightGreyBlue);
   font-size: 14px;
   font-weight: 700;
 `

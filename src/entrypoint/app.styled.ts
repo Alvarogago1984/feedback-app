@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 
 export const ConteinerApp = styled.main`
-
   background: var(--color-VeryLightGrey);
   display: flex;
   justify-content: center;
   gap: 30px;
   margin-top: 94px;
-
   @media (width<1120px) {
     flex-direction: column;
     gap: 0px;

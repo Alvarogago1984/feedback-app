@@ -40,12 +40,12 @@ export const ValueTextSuggestion = styled.span`
 `;
 export const OrderList = styled.span`
   background-color: var(--color-DarkBlue);
-  color: var(--color--LightGrey);
+  color: var(--color-LightGrey);
   opacity: 0.75;
   font-size: 14px;
   font-weight: 400;
   @media (width < 690px) {
-    color: var(--color--LightGrey);
+    color: var(--color-LightGrey);
   }
 `;
 export const OrderListValue = styled(OrderList)`

@@ -5,7 +5,7 @@ import {
   ButtonMiddleBig,
   ButtonMiddleSmall,
   ButtonBottonSmall,
-} from './FilterDivComponents.styled'
+} from './FilterDivComponents.styled';
 import {
   all,
   ui,
@@ -13,29 +13,31 @@ import {
   enhancement,
   bug,
   feature,
-} from './constants/FilterDivComponent.constants'
+} from './constants/FilterDivComponent.constants';
+import {IclickFilter} from '../../../../types/IclickFilter'
 
-export const FilterDivComponent = () => {
+export const FilterDivComponent = ({handleClick}:IclickFilter) => {
+
   return (
-    <FilterDiv>
-      <ButtonUp>
+    <FilterDiv >
+      <ButtonUp onClick={handleClick}>
         <TextSpan>{all}</TextSpan>
       </ButtonUp>
-      <ButtonUp>
+      <ButtonUp onClick={handleClick} >
         <TextSpan>{ui}</TextSpan>
       </ButtonUp>
-      <ButtonUp>
+      <ButtonUp onClick={handleClick} >
         <TextSpan>{ux}</TextSpan>
       </ButtonUp>
-      <ButtonMiddleBig>
+      <ButtonMiddleBig  onClick={handleClick}>
         <TextSpan>{enhancement}</TextSpan>
       </ButtonMiddleBig>
-      <ButtonMiddleSmall>
+      <ButtonMiddleSmall onClick={handleClick}>
         <TextSpan>{bug}</TextSpan>
       </ButtonMiddleSmall>
-      <ButtonBottonSmall>
+      <ButtonBottonSmall onClick={handleClick}>
         <TextSpan>{feature}</TextSpan>
       </ButtonBottonSmall>
     </FilterDiv>
-  )
-}
+  );
+};

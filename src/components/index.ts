@@ -1,3 +1,5 @@
-import { ButtonAddFeedback } from './ButtonAddFeedback';
+import { ButtonPlusAddFeedback } from './ButtonPlusAddFeedback';
+import { CancelButton } from './CancelButton';
+import { AddfeedbackButton } from './AddFeebackButton';
 
-export { ButtonAddFeedback };
+export { ButtonPlusAddFeedback, CancelButton, AddfeedbackButton };
