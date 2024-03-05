@@ -6,6 +6,7 @@ const GlobalStyled = createGlobalStyle`
   --color-PrimaryPurple: #AD1FEA;
 --color-SecondaryBlue: #4661E6;
 --color-LightSkyBlue: #62BCFA;  
+--color-SkyBlue: #7C91F9;  
 --color--Purple:#C75AF6;
 --color-White: #FFFFFF; 
 --color-LightGreyBlue: #F2F4FF; 
@@ -16,6 +17,7 @@ const GlobalStyled = createGlobalStyle`
 --color-SoftBlueGrey: #647196; 
 --color-GrayishBlue:#656EA3;
 --color-Coral: #F49F85;  
+--color-Red: #D73737;  
  }
 * { 
   margin:0;

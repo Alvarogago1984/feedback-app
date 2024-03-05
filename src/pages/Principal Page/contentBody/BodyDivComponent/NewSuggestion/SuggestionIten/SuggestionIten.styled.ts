@@ -30,7 +30,6 @@ export const Upvotes = styled.div`
     ${UpvotesText} {
       color: var(--color-White);
     }
-   
   }
 `;
 export const ContainerSuggestions = styled.div`
@@ -47,7 +46,6 @@ export const ContainerSuggestions = styled.div`
     ${TitleDescription} {
       color: var(--color-SecondaryBlue);
     }
-  
   }
 `;
 export const UpVotesImg = styled.img`

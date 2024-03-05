@@ -1,8 +1,5 @@
-import { useState } from 'react';
 import {
   ContainerNewFeedback,
-  ContainerBack,
-  TitleBack,
   ContainerCreate,
   ImageCircleFeedback,
   Container,
@@ -12,9 +9,9 @@ import {
   InputFeedback,
   DescriptionDetail,
   ContainerButton,
+  EmptyText,
 } from './NewFeedback.styled';
 import {
-  GO_BACK,
   CREATE_NEW_FEEDBACK,
   FEEDBACK_TITLE,
   DESCRIPTIVE_HEADLINE,
@@ -22,48 +19,28 @@ import {
   CHOOSE_CATEGORY,
   FEEDBACK_DETAIL,
   ADDED_COMMENTS,
+  EMPTY,
 } from './Constants/NewFeedback.constants';
-import IconBack from '../../assets/shared/icon-arrow-left.svg';
 import IconNewFeedback from '../../assets/shared/icon-new-feedback.svg';
-import { CancelButton, AddfeedbackButton } from '../../components/index';
+import { CancelButton, AddfeedbackButton, Goback } from '../../components';
 import { DropDown } from './DropDown';
-import { NewFeedbackValue } from './NewFeedback.types';
-import { useNavigate } from 'react-router-dom';
+import { HandleEvent } from '../NewFeedback/utils/HandleEvent';
 
 export const NewFeedback = () => {
-  const navigate = useNavigate();
-
-  const [value, setValue] = useState<NewFeedbackValue>({
-    Title: '',
-    Detail: '',
-  });
-  const [selectDropDown, setSelectDropDown] = useState<string>('Feature');
-
-  const handleChageTitle = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    setValue({ ...value, Title: evt.target.value });
-  };
-
-  const handleChageDetail = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValue({ ...value, Detail: evt.target.value });
-  };
-
-  const handleClickAddFeedback = () => {
-    navigate('/');
-    
-    localStorage.setItem('AddFeedback Title and Detail', JSON.stringify( value));
-    localStorage.setItem(
-      'AddFeedback DropDown',
-      JSON.stringify(selectDropDown)
-    );
-  };
-
+  const {
+    handleChageTitle,
+    handleChageDetail,
+    handleClickAddFeedback,
+    setSelectDropDown,
+    isEmpty,
+    selectDropDown,
+    value,
+    handleCancel,
+  } = HandleEvent();
   return (
     <ContainerNewFeedback>
       <Container>
-        <ContainerBack to="/">
-          <img src={IconBack} alt="Icon go back" />
-          <TitleBack>{GO_BACK}</TitleBack>
-        </ContainerBack>
+        <Goback />
         <ContainerCreate>
           <ImageCircleFeedback
             src={IconNewFeedback}
@@ -89,10 +66,16 @@ export const NewFeedback = () => {
             typeof="text"
             onChange={handleChageDetail}
             value={value.Detail}
+            isEmpty={isEmpty}
           />
+          <EmptyText isEmpty={isEmpty}>{EMPTY}</EmptyText>
           <ContainerButton>
-            <CancelButton />
-            <AddfeedbackButton onClick={handleClickAddFeedback} />
+            <CancelButton onClick={handleCancel} />
+            <AddfeedbackButton
+              onClick={handleClickAddFeedback}
+              isEmpty={isEmpty}
+              disabled={isEmpty}
+            />
           </ContainerButton>
         </ContainerCreate>
       </Container>

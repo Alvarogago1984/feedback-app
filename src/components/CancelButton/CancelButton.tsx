@@ -1,12 +1,11 @@
-import {CANCEL} from './constants/CancelButton.constants'
-import {CancelHeader, CancelTextHeader} from './CancelButton.styled'
+import { CANCEL } from './constants/CancelButton.constants';
+import { CancelHeader, CancelTextHeader } from './CancelButton.styled';
+import {IonClickCancel} from './CancelButton.types'
 
-export const CancelButton = () => {
- 
+export const CancelButton = ({ onClick }: IonClickCancel) => {
   return (
-    <CancelHeader >
+    <CancelHeader onClick={onClick}>
       <CancelTextHeader>{CANCEL}</CancelTextHeader>
     </CancelHeader>
   );
-  
-}
+};

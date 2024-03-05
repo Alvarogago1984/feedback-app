@@ -5,11 +5,14 @@ export interface UserInterface {
 }
 
 export interface ReplyInterface extends UserInterface {
+  user: UserInterface;
   content: string;
   replyingTo: string;
 }
 
+
 export interface CommentInterface extends UserInterface {
+  user: UserInterface;
   id: number;
   content: string;
   replies?: ReplyInterface[];

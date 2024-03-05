@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Iempty } from '../../types/Iempty';
 
 export const ContainerNewFeedback = styled.div`
   display: flex;
@@ -7,24 +7,12 @@ export const ContainerNewFeedback = styled.div`
   align-items: center;
   background: var(--color-VeryLightGrey);
 `;
-export const ContainerBack = styled(Link)`
-  display: flex;
-  align-items: center;
-  margin-bottom: 68px;
-  cursor: pointer;
-  text-decoration: none;
-`;
-export const TitleBack = styled.h4`
-  color: var(--color-SoftBlueGrey);
-  font-size: 14px;
-  font-weight: 700;
-  padding-left: 15px;
-`;
 export const ContainerCreate = styled.div`
   width: 540px;
   height: 657px;
   background: var(--color-White);
   position: relative;
+  margin-top: 68px;
 `;
 export const ImageCircleFeedback = styled.img`
   position: absolute;
@@ -74,14 +62,14 @@ export const InputFeedback = styled.input`
   padding: 13px 24px;
 `;
 
-export const DescriptionDetail = styled.textarea`
+export const DescriptionDetail = styled.textarea<Iempty>`
   margin-left: 42px;
   border-radius: 5px;
   background-color: var(--color-VeryLightGrey);
   width: 456px;
   height: 96px;
-  margin-bottom: 32px;
-  border: none;
+  margin-bottom: ${(props) => (props.isEmpty ? '4px' : '40px')};
+  border: ${(props) => (props.isEmpty ? '2px solid var(--color-Red)' : 'none')};
   resize: none;
   cursor: pointer;
   color: var(--color-MidnightBlue);
@@ -94,4 +82,14 @@ export const ContainerButton = styled.div`
   justify-content: flex-end;
   gap: 16px;
   margin-right: 42px;
+`;
+
+export const EmptyText = styled.h4<Iempty>`
+  color: var(--color-Red);
+  font-family: 'Jost-Regular';
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  margin-left: 42px;
+  display: ${(props) => (props.isEmpty ? 'block' : 'none')};
 `;

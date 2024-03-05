@@ -138,6 +138,15 @@
       "comments": [
         {
           "id": 8,
+          "content": "I've been saving the profile URLs of a few people and I check what they’ve been doing from time to time. Being able to follow them solves that",
+          "user": {
+            "image": "./assets/user-images/image-jackson.jpg",
+            "name": "Jackson Barker",
+            "username": "countryspirit"
+          }
+        },
+        {
+          "id": 9,
           "content": "I also want to be notified when devs I follow submit projects on FEM. Is in-app notification also in the pipeline?",
           "user": {
             "image": "./assets/user-images/image-victoria.jpg",
@@ -155,16 +164,8 @@
               }
             }
           ]
-        },
-        {
-          "id": 9,
-          "content": "I've been saving the profile URLs of a few people and I check what they’ve been doing from time to time. Being able to follow them solves that",
-          "user": {
-            "image": "./assets/user-images/image-jackson.jpg",
-            "name": "Jackson Barker",
-            "username": "countryspirit"
-          }
         }
+        
       ]
     },
     {
