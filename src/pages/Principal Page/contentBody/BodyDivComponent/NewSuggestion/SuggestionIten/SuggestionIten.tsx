@@ -23,7 +23,6 @@ import { HoverSuggestionIten } from './utils/HoverSuggestionIten.utils';
 export const SuggestionIten = ({ suggestion }: Isuggestions) => {
   const { conditionImg, handleHover, handleRouter} = HoverSuggestionIten(suggestion);
 
-
   return (
     <ContainerSuggestions key={suggestion?.id} onClick={handleRouter} >
       <Upvotes onMouseEnter={handleHover} onMouseLeave={handleHover}>

@@ -12,46 +12,66 @@ import {
   HR,
   ReplyingTon,
   HRReplies,
-  ContainerReplies, 
-  BodyReplies
+  ContainerReplies,
+  BodyReplies,
+  ContainerPostReply,
 } from '../Comments.styled';
-import { Icommentes } from '../comments.type'
+import { Icommentes } from '../comments.type';
 import { REPLY } from '../Constants/Comments.constants';
-import { getImagePath } from '../utils/getImageName.utils'
+import { getImagePath } from '../utils/getImageName.utils';
+import { PostReply } from '../postReply/PostReply';
 
-export const Replies = ({ comments }: Icommentes) => {
+export const Replies = ({
+  comments,
+  handleClickReplies,
+  selectedReplyId,
+}: Icommentes) => {
   return (
     <>
-      {comments.map((res, index) => (
-        res.replies && res.replies.map((item, replyIndex) => (
-          <React.Fragment key={replyIndex}>
-            <ContainerReplies>
-              <HRReplies />
-              <BodyReplies>
-                <ContanierRes>
-                  <ContainerUser>
-                    <Image src={getImagePath(item.user.image.split('/').pop())} alt="User" />
-                    <ContainerName>
-                      <Name>{item.user.name}</Name>
-                      <Email>
-                        <EmailText>@</EmailText>
-                        {item.user.username}
-                      </Email>
-                    </ContainerName>
-                    <TextReply>{REPLY}</TextReply>
-                  </ContainerUser>
-                  <ContentText>
-                    <EmailText>@</EmailText>
-                    <ReplyingTon>{item.replyingTo}</ReplyingTon>
-                    {item.content}
-                  </ContentText>
-                </ContanierRes>
-                {index !== comments.length - 1 && <HR />}
-              </BodyReplies>
-            </ContainerReplies>
-          </React.Fragment>
-        ))
-      ))}
+      {comments.map(
+        (res, index) =>
+          res.replies &&
+          res.replies.map((item, replyIndex) => (
+            <React.Fragment key={replyIndex}>
+              <ContainerReplies>
+                <HRReplies />
+                <BodyReplies>
+                  <ContanierRes>
+                    <ContainerUser>
+                      <Image
+                        src={getImagePath(item.user.image.split('/').pop())}
+                        alt="User"
+                      />
+                      <ContainerName>
+                        <Name>{item.user.name}</Name>
+                        <Email>
+                          <EmailText>@</EmailText>
+                          {item.user.username}
+                        </Email>
+                      </ContainerName>
+                      <TextReply
+                        onClick={() => handleClickReplies(item.user.username)}
+                      >
+                        {REPLY}
+                      </TextReply>
+                    </ContainerUser>
+                    <ContentText>
+                      <EmailText>@</EmailText>
+                      <ReplyingTon>{item.replyingTo}</ReplyingTon>
+                      {item.content}
+                    </ContentText>
+                  </ContanierRes>
+                  <ContainerPostReply>
+                    <PostReply
+                      isHidden={selectedReplyId !== item.user.username}
+                    />
+                  </ContainerPostReply>
+                  {index !== comments.length - 1 && <HR />}
+                </BodyReplies>
+              </ContainerReplies>
+            </React.Fragment>
+          ))
+      )}
     </>
   );
 };

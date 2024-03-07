@@ -4,6 +4,7 @@ import { AddfeedbackButton } from './AddFeebackButton';
 import { Goback } from './Goback/Goback';
 import { EditFeedback } from './EditFeedback/EditFeedback';
 import { Comments } from './Comments/Comments';
+import { AddComment } from './AddComment/AddComment';
 
 export {
   ButtonPlusAddFeedback,
@@ -12,4 +13,5 @@ export {
   Goback,
   EditFeedback,
   Comments,
+  AddComment
 };

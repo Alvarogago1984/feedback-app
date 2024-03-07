@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { DataInterface } from './FetchGetValue.type';
 
 export const FetchGetValueBody = () => {
-  const [valueFetch, setValueFetch] = useState<DataInterface | undefined>();
+  const [valueFetch, setValueFetch] = useState<DataInterface>();
   const url = '/data.json';
 
   useEffect(() => {

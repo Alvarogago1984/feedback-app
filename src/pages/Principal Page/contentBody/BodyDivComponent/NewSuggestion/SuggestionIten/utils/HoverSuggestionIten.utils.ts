@@ -6,18 +6,15 @@ import { ProductRequestInterface } from '../../../../../../../services/FetchGetV
 
 export const HoverSuggestionIten = (suggestion: ProductRequestInterface) => {
   const [hover, setHover] = useState(true);
-
   const navigate = useNavigate();
+  const conditionImg = hover ? IconArrowUp : IconArrowDown;
 
   const handleHover = () => {
     setHover(!hover);
   };
-  const conditionImg = hover ? IconArrowUp : IconArrowDown;
 
   const handleRouter = () => {
-
-      navigate('/FeedbackDetail', { state: { suggestion: suggestion } });
-
+    navigate('/FeedbackDetail', { state: { suggestion: suggestion } });
   };
 
   return { conditionImg, handleHover, handleRouter };

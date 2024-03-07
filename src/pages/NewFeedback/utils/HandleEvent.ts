@@ -3,6 +3,7 @@ import { NewFeedbackValue } from '../NewFeedback.types';
 import { useNavigate } from 'react-router-dom';
 
 export const HandleEvent = () => {
+
   const [isEmpty, setIsEmpty] = useState(false);
   const navigate = useNavigate();
   const [value, setValue] = useState<NewFeedbackValue>({
@@ -38,6 +39,7 @@ export const HandleEvent = () => {
       );
     }
   };
+  
 
   const handleCancel = () => {
     navigate('/');

@@ -15,10 +15,16 @@ import { REPLY } from './Constants/Comments.constants';
 import { Replies } from './replies/replies';
 import { getImagePath } from './utils/getImageName.utils';
 import { ICommentsProps } from './comments.type';
+import { PostReply } from '../../components/Comments/postReply/PostReply';
 
-export const Comments = ({ suggestion }: ICommentsProps) => {
+export const Comments = ({
+  suggestion,
+  handleClickReply,
+  selectedReplyId,
+  handleClickReplies,
+}: ICommentsProps) => {
   const comments = suggestion.comments;
-console.log(comments)
+
   return (
     <>
       {comments &&
@@ -37,14 +43,21 @@ console.log(comments)
                     {res?.user.username}
                   </Email>
                 </ContainerName>
-                <TextReply>{REPLY}</TextReply>
+                <TextReply onClick={() => handleClickReply(res.id)}>
+                  {REPLY}
+                </TextReply>
               </ContainerUser>
               <ContentText>{res.content}</ContentText>
+              <PostReply isHidden={selectedReplyId !== res.id} />
             </ContanierRes>
             {!res.replies && index !== comments.length - 1 && <HR />}
           </React.Fragment>
         ))}
-      <Replies comments={comments} />
+      <Replies
+        comments={comments}
+        selectedReplyId={selectedReplyId}
+        handleClickReplies={handleClickReplies}
+      />
     </>
   );
 };

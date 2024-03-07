@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyled = createGlobalStyle`
 
@@ -16,6 +16,7 @@ const GlobalStyled = createGlobalStyle`
 --color-DarkBlue: #373F68; 
 --color-SoftBlueGrey: #647196; 
 --color-GrayishBlue:#656EA3;
+--color--GrayLight:#8C92B3;
 --color-Coral: #F49F85;  
 --color-Red: #D73737;  
  }
@@ -29,5 +30,5 @@ body {
   font-family: 'Jost', sans-serif;
   background: var(--color-VeryLightGrey);
 }
-`
-export default GlobalStyled
+`;
+export default GlobalStyled;

@@ -6,30 +6,16 @@ import {
   NumberComments,
 } from './FeedbackDetail.styled';
 import { COMMENTS } from './constants/FeedbackDetail.constants';
-import { Goback, EditFeedback, Comments } from '../../components';
+import { Goback, EditFeedback, Comments, AddComment } from '../../components';
 import { SuggestionIten } from '../Principal Page/contentBody/BodyDivComponent/NewSuggestion/SuggestionIten/SuggestionIten';
-import { useLocation } from 'react-router-dom';
-import { ProductRequestInterface } from '../../services/FetchGetValue.type';
-
-interface ILocationState {
-  suggestion: ProductRequestInterface;
-}
+import { SuggestionCondition } from './utils/FeedbackDetail.utils';
+import { SelectedReplyId } from '../../components/Comments/utils/SelectedReplyId';
 
 export const FeedbackDetail = () => {
-
-  const location = useLocation();
-  const state = location.state as ILocationState;
-  const suggestion = state?.suggestion;
-  const numberComments = suggestion.comments.length;
-  const numberCommentsReplies = suggestion.comments.map((item) =>
-    item.replies ? item.replies?.length : 0
-  );
-  const valueReplais = numberCommentsReplies.reduce(
-    (value, actualValue) => value + actualValue,
-    0
-  );
-  const plusComments = numberComments + valueReplais;
-  const numberCommentsCondition = numberComments !== 0;
+  const { suggestion, numberCommentsCondition, plusComments } =
+    SuggestionCondition();
+  const { selectedReplyId, handleClickReply, handleClickReplies } =
+    SelectedReplyId();
 
   return (
     <ContainerDetail>
@@ -41,17 +27,21 @@ export const FeedbackDetail = () => {
       <SuggestionItenWrapper>
         <SuggestionIten suggestion={suggestion} />
       </SuggestionItenWrapper>
-
       {numberCommentsCondition && (
         <ContainerComments>
           <NumberComments>
             {plusComments} {COMMENTS}
           </NumberComments>
-          <Comments suggestion={suggestion} />
+          <Comments
+            suggestion={suggestion}
+            handleClickReply={handleClickReply}
+            selectedReplyId={selectedReplyId}
+            handleClickReplies={handleClickReplies}
+          />
         </ContainerComments>
       )}
 
-      <div></div>
+      <AddComment />
     </ContainerDetail>
   );
 };
