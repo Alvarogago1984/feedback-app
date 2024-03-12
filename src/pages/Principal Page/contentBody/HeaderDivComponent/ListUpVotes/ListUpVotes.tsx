@@ -10,11 +10,8 @@ import {
   ListUpVotesLi,
   LineHR,
 } from './ListUpVotes.styled';
+import {ListUpVotesProps} from './ListUpVotes.types'
 
-interface ListUpVotesProps {
-  isListUpVotes: boolean;
-  setUpVotesValue: React.Dispatch<React.SetStateAction<string>> |undefined;
-}
 export const ListUpVotes = ({ isListUpVotes, setUpVotesValue }: ListUpVotesProps) => {
 
 const handleClicMostLeast = (evt: { target: any; }) => {

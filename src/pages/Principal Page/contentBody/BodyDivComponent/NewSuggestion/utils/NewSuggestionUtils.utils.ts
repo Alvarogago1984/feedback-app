@@ -1,4 +1,4 @@
-import { ProductRequestInterface } from '../../../../../../services/FetchGetValue.type';
+import { ProductRequestInterface } from '../../../../../../types/FetchGetValue.type';
 import { IdetailTitle } from '../../../../../../types/IContentBodyProp';
 
 export const NewSuggestionUtils = (

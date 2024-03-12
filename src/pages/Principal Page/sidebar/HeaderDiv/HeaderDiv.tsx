@@ -4,7 +4,6 @@ import {
   SubTitle,
   Hamburger,
   HeaderText,
-
 } from './HeaderDiv.styled';
 import { frontedMentor, feedbackBoard } from './constants/HeaderDiv.constants';
 import IconHamburger from '../../../../assets/shared/mobile/icon-hamburger.svg';
@@ -16,10 +15,7 @@ export const HeaderDivComponent = () => {
         <Title>{frontedMentor}</Title>
         <SubTitle>{feedbackBoard}</SubTitle>
       </HeaderText>
-     
       <Hamburger src={IconHamburger} alt="Hamburger search" />
-      
-    
     </HeaderDiv>
   );
 };

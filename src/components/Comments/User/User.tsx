@@ -14,7 +14,7 @@ import {
   ReplyInterface,
   DataInterface,
   UserInterface,
-} from '../../../services/FetchGetValue.type';
+} from '../../../types/FetchGetValue.type';
 
 export interface Iuser  {
   res?: CommentInterface;

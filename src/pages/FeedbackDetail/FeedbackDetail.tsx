@@ -6,7 +6,7 @@ import {
   NumberComments,
   ContanierRes,
   ContentText,
-  HR
+  HR,
 } from './FeedbackDetail.styled';
 import { COMMENTS } from './constants/FeedbackDetail.constants';
 import { Goback, EditFeedback, Comments, AddComment } from '../../components';
@@ -22,16 +22,11 @@ import { FilterFeedbackContext } from '../../context/filterFeedbackId.context';
 
 export const FeedbackDetail = () => {
   const { filterID, updateFeedbackId } = useContext(FilterFeedbackContext);
-
-  const { suggestion, numberCommentsCondition, plusComments } =
-    SuggestionCondition();
-
+  const { suggestion, plusComments } = SuggestionCondition();
   const { selectedReplyId, handleClickReply, handleClickReplies } =
     SelectedReplyId();
   const { valueFetch } = FetchGetValueBody();
-
   const { valueCaracters, texto, handleChange } = AddCommentChange();
-
   const { storageComment, storageValue } = getLocalStorageCommentValue();
 
   const handleChangePost = () => {
@@ -41,6 +36,10 @@ export const FeedbackDetail = () => {
   };
 
   const filterFeedbackId = filterID === suggestion.id;
+  const conditionNumberComments = filterFeedbackId
+    ? plusComments + 1
+    : plusComments;
+  const numberCondition = conditionNumberComments !== 0;
 
   return (
     <ContainerDetail>
@@ -52,10 +51,10 @@ export const FeedbackDetail = () => {
       <SuggestionItenWrapper>
         <SuggestionIten suggestion={suggestion} />
       </SuggestionItenWrapper>
-      {numberCommentsCondition && (
+      {numberCondition && (
         <ContainerComments>
           <NumberComments>
-            {filterFeedbackId ? plusComments + 1 : plusComments} {COMMENTS}
+            {conditionNumberComments} {COMMENTS}
           </NumberComments>
           <Comments
             suggestion={suggestion}

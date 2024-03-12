@@ -15,7 +15,6 @@ export const SuggestionCondition = () => {
     0
   );
   const plusComments = numberComments + valueReplais;
-  const numberCommentsCondition = numberComments !== 0;
 
-  return { suggestion, numberCommentsCondition, plusComments};
+  return { suggestion, plusComments};
 };

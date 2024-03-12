@@ -2,7 +2,7 @@ import { useState } from 'react';
 import IconArrowUp from '../../../../../../../assets/shared/icon-arrow-up-blue.svg';
 import IconArrowDown from '../../../../../../../assets/shared/icon-arrow-up.svg';
 import { useNavigate } from 'react-router-dom';
-import { ProductRequestInterface } from '../../../../../../../services/FetchGetValue.type';
+import { ProductRequestInterface } from '../../../../../../../types/FetchGetValue.type';
 
 export const HoverSuggestionIten = (suggestion: ProductRequestInterface) => {
   const [hover, setHover] = useState(true);

@@ -39,7 +39,6 @@ export const HandleEvent = () => {
       );
     }
   };
-  
 
   const handleCancel = () => {
     navigate('/');

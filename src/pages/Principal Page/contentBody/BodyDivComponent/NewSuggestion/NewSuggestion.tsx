@@ -1,6 +1,6 @@
 import { SuggestionIten } from './SuggestionIten/SuggestionIten';
 import { IContentBodyProp } from '../../../../../types/IContentBodyProp';
-import { ProductRequestInterface } from '../../../../../services/FetchGetValue.type';
+import { ProductRequestInterface } from '../../../../../types/FetchGetValue.type';
 import { NewSuggestionUtils } from './utils/NewSuggestionUtils.utils';
 
 export const NewSuggestion = ({

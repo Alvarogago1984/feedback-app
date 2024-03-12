@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DataInterface } from './FetchGetValue.type';
+import { DataInterface } from '../types/FetchGetValue.type';
 
 export const FetchGetValueBody = () => {
   const [valueFetch, setValueFetch] = useState<DataInterface>();

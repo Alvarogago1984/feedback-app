@@ -1,5 +1,5 @@
-import { ProductRequestInterface } from '../services/FetchGetValue.type';
-import {DataInterface} from '../services/FetchGetValue.type'
+import { ProductRequestInterface } from './FetchGetValue.type';
+import {DataInterface} from './FetchGetValue.type'
 
 export interface IdetailTitle {
   upvotes: number;

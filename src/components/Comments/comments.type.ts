@@ -1,8 +1,8 @@
-import { CommentInterface } from '../../services/FetchGetValue.type';
+import { CommentInterface } from '../../types/FetchGetValue.type';
 import {
   ProductRequestInterface,
   UserInterface,
-} from '../../services/FetchGetValue.type';
+} from '../../types/FetchGetValue.type';
 
 export interface Icommentes {
   comments: CommentInterface[];

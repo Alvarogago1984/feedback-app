@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UserInterface } from '../../../services/FetchGetValue.type'
+import { UserInterface } from '../../../types/FetchGetValue.type'
 
 export const SelectedReplyId = () => {
   const [selectedReplyId, setSelectedReplyId] = useState<UserInterface | null |string |number>(null);

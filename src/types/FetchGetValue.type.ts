@@ -10,7 +10,6 @@ export interface ReplyInterface extends UserInterface {
   replyingTo: string;
 }
 
-
 export interface CommentInterface extends UserInterface {
   user: UserInterface;
   id: number;
@@ -19,7 +18,7 @@ export interface CommentInterface extends UserInterface {
 }
 
 export interface ProductRequestInterface {
-  id:  number;
+  id: number;
   title: string;
   category: string;
   upvotes: number;
