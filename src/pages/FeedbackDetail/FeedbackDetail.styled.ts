@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ContainerSuggestions } from '../Principal Page/contentBody/BodyDivComponent/NewSuggestion/SuggestionIten/SuggestionIten.styled';
+
 export const ContainerDetail = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,4 +36,24 @@ export const NumberComments = styled.p`
   margin-left:34px;
   margin-top: 24px;
   margin-bottom: 28px;
+`;
+export const ContanierRes = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+`;
+export const ContentText = styled.p`
+  color: var(--color-SoftBlueGrey);
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 104px;
+  margin-right: 32px;
+`;
+export const HR = styled.hr`
+  opacity: 0.25;
+  background-color: var(--color--GrayLight);
+  width: 666px;
+  height: 1px;
+  margin-bottom: 33px;
+  margin-left: 32px;
 `;

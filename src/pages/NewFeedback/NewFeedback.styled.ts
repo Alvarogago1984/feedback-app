@@ -6,6 +6,7 @@ export const ContainerNewFeedback = styled.div`
   flex-direction: column;
   align-items: center;
   background: var(--color-VeryLightGrey);
+  margin-bottom: 30px;
 `;
 export const ContainerCreate = styled.div`
   width: 540px;

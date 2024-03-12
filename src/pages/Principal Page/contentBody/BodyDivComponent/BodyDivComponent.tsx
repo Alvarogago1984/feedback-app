@@ -36,7 +36,6 @@ export const BodyDivComponent = ({
           select={select}
           upVotesValue={upVotesValue}
           setUpVotesValue={setUpVotesValue}
-          valueFetch={valueFetch}
         />
       )}
     </>

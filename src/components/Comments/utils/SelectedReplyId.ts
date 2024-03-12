@@ -1,18 +1,17 @@
 import { useState } from 'react';
-
-type SelectType = number | string | null;
+import { UserInterface } from '../../../services/FetchGetValue.type'
 
 export const SelectedReplyId = () => {
-  const [selectedReplyId, setSelectedReplyId] = useState<SelectType>(null);
+  const [selectedReplyId, setSelectedReplyId] = useState<UserInterface | null |string |number>(null);
 
-  const handleClickReply = (id: SelectType) => {
+  const handleClickReply = (id: UserInterface | number) => {
     if (selectedReplyId === id) {
       setSelectedReplyId(null);
     } else {
       setSelectedReplyId(id);
     }
   };
-  const handleClickReplies = (username: SelectType) => {
+  const handleClickReplies = (username:UserInterface | string  ) => {
     if (selectedReplyId === username) {
       setSelectedReplyId(null);
     } else {

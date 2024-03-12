@@ -1,14 +1,8 @@
 import React from 'react';
 import {
-  Name,
-  Email,
   EmailText,
   ContanierRes,
-  TextReply,
   ContentText,
-  Image,
-  ContainerUser,
-  ContainerName,
   HR,
   ReplyingTon,
   HRReplies,
@@ -17,8 +11,7 @@ import {
   ContainerPostReply,
 } from '../Comments.styled';
 import { Icommentes } from '../comments.type';
-import { REPLY } from '../Constants/Comments.constants';
-import { getImagePath } from '../utils/getImageName.utils';
+import { User } from '../User/User';
 import { PostReply } from '../postReply/PostReply';
 
 export const Replies = ({
@@ -37,24 +30,7 @@ export const Replies = ({
                 <HRReplies />
                 <BodyReplies>
                   <ContanierRes>
-                    <ContainerUser>
-                      <Image
-                        src={getImagePath(item.user.image.split('/').pop())}
-                        alt="User"
-                      />
-                      <ContainerName>
-                        <Name>{item.user.name}</Name>
-                        <Email>
-                          <EmailText>@</EmailText>
-                          {item.user.username}
-                        </Email>
-                      </ContainerName>
-                      <TextReply
-                        onClick={() => handleClickReplies(item.user.username)}
-                      >
-                        {REPLY}
-                      </TextReply>
-                    </ContainerUser>
+                    <User item={item} handleClickReplies={handleClickReplies} />
                     <ContentText>
                       <EmailText>@</EmailText>
                       <ReplyingTon>{item.replyingTo}</ReplyingTon>
@@ -63,7 +39,7 @@ export const Replies = ({
                   </ContanierRes>
                   <ContainerPostReply>
                     <PostReply
-                      isHidden={selectedReplyId !== item.user.username}
+                      isHidden={ selectedReplyId !== item.user.username}
                     />
                   </ContainerPostReply>
                   {index !== comments.length - 1 && <HR />}

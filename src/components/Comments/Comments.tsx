@@ -1,19 +1,7 @@
 import React from 'react';
-import {
-  Name,
-  Email,
-  EmailText,
-  ContanierRes,
-  TextReply,
-  ContentText,
-  Image,
-  ContainerUser,
-  ContainerName,
-  HR,
-} from './Comments.styled';
-import { REPLY } from './Constants/Comments.constants';
+import { ContanierRes, ContentText, HR } from './Comments.styled';
 import { Replies } from './replies/replies';
-import { getImagePath } from './utils/getImageName.utils';
+import { User } from './User/User';
 import { ICommentsProps } from './comments.type';
 import { PostReply } from '../../components/Comments/postReply/PostReply';
 
@@ -31,33 +19,21 @@ export const Comments = ({
         comments.map((res, index) => (
           <React.Fragment key={index}>
             <ContanierRes>
-              <ContainerUser>
-                <Image
-                  src={getImagePath(res.user.image.split('/').pop())}
-                  alt="User"
-                />
-                <ContainerName>
-                  <Name>{res.user.name}</Name>
-                  <Email>
-                    <EmailText>@</EmailText>
-                    {res?.user.username}
-                  </Email>
-                </ContainerName>
-                <TextReply onClick={() => handleClickReply(res.id)}>
-                  {REPLY}
-                </TextReply>
-              </ContainerUser>
+              <User res={res} handleClickReply={handleClickReply} />
               <ContentText>{res.content}</ContentText>
-              <PostReply isHidden={selectedReplyId !== res.id} />
+              <PostReply isHidden={selectedReplyId !== res.id}/>
             </ContanierRes>
             {!res.replies && index !== comments.length - 1 && <HR />}
+            
           </React.Fragment>
+          
         ))}
       <Replies
         comments={comments}
         selectedReplyId={selectedReplyId}
         handleClickReplies={handleClickReplies}
       />
+      
     </>
   );
 };

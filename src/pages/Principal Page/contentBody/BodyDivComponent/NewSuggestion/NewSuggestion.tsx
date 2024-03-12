@@ -7,14 +7,14 @@ export const NewSuggestion = ({
   addFeedbackTitleDetail,
   valueApi,
   select,
-  valueFetch,
   upVotesValue,
   setUpVotesValue,
 }: IContentBodyProp) => {
   const { suggestionsWithAdditional } = NewSuggestionUtils(
     addFeedbackTitleDetail,
     select,
-    valueApi
+    valueApi,
+
   );
 
   const orderUpdates = () => {
@@ -28,7 +28,7 @@ export const NewSuggestion = ({
       return suggestionsWithAdditional
         .sort((a, b) => b.upvotes - a.upvotes)
         .map((res: ProductRequestInterface) => (
-          <SuggestionIten key={res.id} suggestion={res} />
+          <SuggestionIten key={res.id} suggestion={res}  />
         ));
     } else if (upVotesValue === 'Most Comments') {
       return suggestionsWithAdditional
@@ -37,7 +37,7 @@ export const NewSuggestion = ({
             a.comments && b.comments && b.comments.length - a.comments.length
         )
         .map((res: ProductRequestInterface) => (
-          <SuggestionIten key={res.id} suggestion={res} />
+          <SuggestionIten key={res.id} suggestion={res}  />
         ));
     } else if (upVotesValue === 'Least Comments') {
       return suggestionsWithAdditional

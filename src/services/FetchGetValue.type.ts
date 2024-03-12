@@ -19,7 +19,7 @@ export interface CommentInterface extends UserInterface {
 }
 
 export interface ProductRequestInterface {
-  id: string;
+  id:  number;
   title: string;
   category: string;
   upvotes: number;

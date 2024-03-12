@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { ProductRequestInterface } from '../../../../../../services/FetchGetValue.type';
 import { IdetailTitle } from '../../../../../../types/IContentBodyProp';
 
@@ -15,7 +14,7 @@ export const NewSuggestionUtils = (
           category: select,
           upvotes: 0,
           comments: [],
-          id: uuidv4(),
+          id: Date.now(),
         }
       : null;
 

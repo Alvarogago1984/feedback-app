@@ -31,11 +31,11 @@ export const SuggestionIten = ({ suggestion }: Isuggestions) => {
       </Upvotes>
       <Description>
         <TitleDescription>
-          {suggestion?.title || suggestion?.title}
+          {suggestion?.title}
         </TitleDescription>
-        <Details>{suggestion?.description || suggestion?.description}</Details>
+        <Details>{suggestion?.description}</Details>
         <Select>
-          <SelectText>{suggestion?.category || suggestion?.category}</SelectText>
+          <SelectText>{suggestion?.category}</SelectText>
         </Select>
       </Description>
       <Comments>
