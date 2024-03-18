@@ -35,7 +35,7 @@ export const AddComment = ({
         <Character>
           {valueCaracters} {CHARACTERS}
         </Character>
-        <ContainerButton onClick={handleChangePost}>
+        <ContainerButton data-testid= 'buttonclick' onClick={handleChangePost}>
           <ButtonText>{POST_COMMENT}</ButtonText>
         </ContainerButton>
       </ContainerCharactersButton>

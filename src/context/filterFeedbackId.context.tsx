@@ -5,10 +5,9 @@ import {
 } from './filterFeedback.type';
 
 export const FilterFeedbackContext = createContext<FilterFeedbackContextType>({
-  filterID: null, // Valor inicial compatible
-  updateFeedbackId: () => {}, // Función vacía como marcador de posición
+  filterID: null, 
+  updateFeedbackId: () => {}, 
 });
-
 export const FilterFeedbackIdContext = ({
   children,
 }: FilterFeedbackIdProviderProps) => {

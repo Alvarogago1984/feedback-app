@@ -7,7 +7,7 @@ import {IonClick} from './AddfeeedbackButton.types'
 
 export const AddfeedbackButton = ({ onClick, isEmpty, disabled }: IonClick) => {
   return (
-    <AddfeedbackButtonHeader onClick={onClick} disabled={disabled} isEmpty={isEmpty}>
+    <AddfeedbackButtonHeader data-testid='buttonclick' onClick={onClick} disabled={disabled} isEmpty={isEmpty}>
       <AddfeedbackButtonTextHeader>{ADD_FEEDBACK}</AddfeedbackButtonTextHeader>
     </AddfeedbackButtonHeader>
   );
